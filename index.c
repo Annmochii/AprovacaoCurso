@@ -3,7 +3,7 @@
 int main(void) {
   // Entrada
 	float AV1, AV2, PF, MP, Final;
-	int TF;
+	int TF, MAX_FALTAS, QT_AULAS;
 	char opcao;
 	printf("> Calculadora de Resultados da disciplina de Programação de Computadores\n");
 	printf("> Os resultados inseridos são:\n");
@@ -14,6 +14,12 @@ int main(void) {
 	// Processamento
 	#define MAX_NOTA 10.0
 	#define MIN_NOTA 0.0
+	#define MEDIA 7.0
+	#define MEDIA_FINAL 5.0
+  #define CARGA_HORARIA 80
+	
+	QT_AULAS = CARGA_HORARIA / 2;
+	MAX_FALTAS = QT_AULAS / 2;
 
 	if ( opcao == 'A') {
 		
@@ -38,11 +44,11 @@ int main(void) {
 		// Processamento
 		MP = (AV1 + AV2) / 2;
 
-		if ( MP >= 7.0 && TF <= 20 ){
+		if ( MP >= MEDIA && TF <= MAX_FALTAS ){
 			// Saída
 			printf("> Aprovado!");
 		}
-		else if ( TF <= 20 ) {
+		else if ( TF <= MAX_FALTAS ) {
 			// Saída
 			printf("> Prova Final.");
 		}
@@ -91,11 +97,11 @@ int main(void) {
 			Final = MP;
 		}
 
-		if ( Final >= 5.0 && TF <= 20 ) {
+		if ( Final >= MEDIA_FINAL && TF <= MAX_FALTAS  ) {
 			// Saída
 			printf("> Aprovado!");
 		}
-		else if ( Final > 5.0 && TF > 20 ) {
+		else if ( Final > MEDIA_FINAL && TF > MAX_FALTAS  ) {
 			// Saída
 			printf("> Reprovado por falta.");
 		}
