@@ -16,7 +16,7 @@ int main(void) {
 	#define MIN_NOTA 0.0
 	#define MEDIA 7.0
 	#define MEDIA_FINAL 5.0
-  #define CARGA_HORARIA 80
+  	#define CARGA_HORARIA 80
 	
 	QT_AULAS = CARGA_HORARIA / 2;
 	MAX_FALTAS = QT_AULAS / 2;
